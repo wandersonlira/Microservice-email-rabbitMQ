@@ -3,6 +3,7 @@ package com.lira.msemail.models;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.UUID;
 
 import com.lira.msemail.enums.StatusEmail;
 
@@ -22,7 +23,7 @@ public class EmailModel implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long emailId;
+	private UUID emailId;
 	private String ownerRef;
 	private String emailFrom;
 	private String emailTo;
@@ -35,7 +36,7 @@ public class EmailModel implements Serializable{
 	
 	public EmailModel() {}
 
-	public EmailModel(Long emailId, String ownerRef, String emailFrom, String emailTo, String subject, String text,
+	public EmailModel(UUID emailId, String ownerRef, String emailFrom, String emailTo, String subject, String text,
 			LocalDateTime sendDateEmail, StatusEmail statusEmail) {
 		super();
 		this.emailId = emailId;
@@ -50,11 +51,11 @@ public class EmailModel implements Serializable{
 	
 	
 	
-	public Long getEmailId() {
+	public UUID getEmailId() {
 		return emailId;
 	}
 
-	public void setEmailId(Long emailId) {
+	public void setEmailId(UUID emailId) {
 		this.emailId = emailId;
 	}
 
